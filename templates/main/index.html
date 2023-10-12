@@ -4,27 +4,15 @@
   <head>
     <title>Youdemy</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no"/>
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
-    />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" />
 
-    <link
-      rel="stylesheet"
-      href="{% static 'css/open-iconic-bootstrap.min.css' %}"
-    />
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
 
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
-    <link
-      rel="stylesheet"
-      href="{% static 'css/owl.theme.default.min.css' %}"
-    />
+    <link rel="stylesheet"  href="{% static 'css/owl.theme.default.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
 
     <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
@@ -40,22 +28,14 @@
     <script src="{%static '/js/form.js' %}"></script>
     <div class="bg-top navbar-light d-flex flex-column-reverse">
       <div class="container py-3">
-        <div
-          class="row no-gutters d-flex align-items-center align-items-stretch"
-        >
+        <div class="row no-gutters d-flex align-items-center align-items-stretch">
           <div class="col-md-4 d-flex align-items-center py-4">
-            <a class="navbar-brand" href="{% url 'home' %}"
-              >Youdemy<span>.COM</span></a
-            >
+            <a class="navbar-brand" href="{% url 'home' %}">Youdemy<span>.COM</span></a>
           </div>
           <div class="col-lg-8 d-block">
             <div class="row d-flex">
-              <div
-                class="col-md d-flex topper align-items-center align-items-stretch py-md-4"
-              >
-                <div
-                  class="icon d-flex justify-content-center align-items-center"
-                >
+              <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+                <div class="icon d-flex justify-content-center align-items-center">
                   <span class="ion-ios-paper-plane"></span>
                 </div>
                 <div class="text">
@@ -63,12 +43,8 @@
                   <span>support@youdemy.co</span>
                 </div>
               </div>
-              <div
-                class="col-md d-flex topper align-items-center align-items-stretch py-md-4"
-              >
-                <div
-                  class="icon d-flex justify-content-center align-items-center"
-                >
+             <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4" >
+            <div class="icon d-flex justify-content-center align-items-center">
                   <span class="ion-ios-call"></span>
                 </div>
                 <div class="text">
@@ -76,12 +52,8 @@
                   <span>+91 1234567890</span>
                 </div>
               </div>
-              <div
-                class="col-md d-flex topper align-items-center align-items-stretch py-md-4"
-              >
-                <div
-                  class="icon d-flex justify-content-center align-items-center"
-                >
+              <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+                <div class="icon d-flex justify-content-center align-items-center">
                   <span class="ion-logo-facebook"></span>
                 </div>
                 <div class="text">
@@ -125,30 +97,14 @@
       role="alert"
     >
       {{ message }}
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="Close"
-      >
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     {% endfor %}
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light"
-      id="ftco-navbar"
-    >
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container d-flex align-items-center">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#ftco-nav"
-          aria-controls="ftco-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
         <form action="#" class="searchform order-lg-last">
@@ -191,41 +147,25 @@
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
-      <div
-        class="slider-item"
-        style="background-image: url('{% static 'images/bg_1.jpg' %}')"
-      >
+      <div class="slider-item" style="background-image: url('{% static 'images/bg_1.jpg' %}')">
         <div class="overlay"></div>
         <div class="container">
-          <div
-            class="row no-gutters slider-text align-items-center justify-content-end"
-            data-scrollax-parent="true"
-          >
+      <div class="row no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
             <div class="col-md-7 ftco-animate mb-md-5">
               <span class="subheading">Youdemy</span>
               <h1 class="mb-4">Achieve Your Goals With Youdemy</h1>
               <p>
-                <a
-                  href="{% url 'courses' %}"
-                  class="btn btn-primary px-4 py-3 mt-3"
-                  >Courses</a
-                >
+            <a href="{% url 'courses' %}" class="btn btn-primary px-4 py-3 mt-3">Courses</a>
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div
-        class="slider-item"
-        style="background-image: url('{% static 'images/bg_2.jpg' %}')"
-      >
+      <div class="slider-item" style="background-image: url('{% static 'images/bg_2.jpg' %}')">
         <div class="overlay"></div>
         <div class="container">
-          <div
-            class="row no-gutters slider-text align-items-center justify-content-end"
-            data-scrollax-parent="true"
-          >
+     <div class="row no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
             <div class="col-md-7 ftco-animate mb-md-5">
               <span class="subheading">Youdemy</span>
               <h1 class="mb-4">A Learning Platform For Beginners</h1>
@@ -268,28 +208,13 @@
                   {% csrf_token %}
                   <!-- Signup form fields -->
                   <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="uname"
-                      placeholder="User Name"
-                    />
+              <input type="text" class="form-control" name="uname" placeholder="User Name"/>
                   </div>
                   <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="fname"
-                      placeholder="First Name"
-                    />
+                    <input type="text" class="form-control" name="fname" placeholder="First Name"/>
                   </div>
                   <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="lname"
-                      placeholder="Last Name"
-                    />
+              <input type="text" class="form-control" name="lname" placeholder="Last Name" />
                   </div>
                   <div class="form-group">
                     <select name="role" id="role" class="form-control">
@@ -325,74 +250,33 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input
-                      type="email"
-                      name="email"
-                      class="form-control"
-                      placeholder="Email"
-                    />
+              <input type="email" name="email" class="form-control" placeholder="Email"/>
                   </div>
                   <div class="form-group">
-                    <input
-                      type="password"
-                      name="pass1"
-                      class="form-control"
-                      placeholder="Password"
-                    />
+                    <input type="password" name="pass1" class="form-control" placeholder="Password"/>
                   </div>
                   <div class="form-group">
-                    <input
-                      type="password"
-                      name="pass2"
-                      class="form-control"
-                      placeholder="Confirm Password"
-                    />
+                    <input type="password" name="pass2" class="form-control" placeholder="Confirm Password"/>
                   </div>
 
                   <div class="form-group">
-                    <button
-                      type="submit"
-                      name="submit_action"
-                      value="signup"
-                      class="btn btn-secondary py-3 px-4"
-                    >
+                    <button type="submit" name="submit_action" value="signup" class="btn btn-secondary py-3 px-4">
                       Sign Up
                     </button>
                   </div>
                 </form>
 
-                <form
-                  id="signin-form"
-                  action="{% url 'signin' %}"
-                  method="post"
-                  class="appointment-form ftco-animate"
-                  style="display: none"
-                >
+                <form id="signin-form" action="{% url 'signin' %}" method="post" class="appointment-form ftco-animate" style="display: none">
                   {% csrf_token %}
                   <!-- Signin form fields -->
                   <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="email"
-                      placeholder="Email"
-                    />
+                    <input type="text" class="form-control" name="email" placeholder="Email"/>
                   </div>
                   <div class="form-group">
-                    <input
-                      type="password"
-                      name="pass1"
-                      class="form-control"
-                      placeholder="Password"
-                    />
+                    <input type="password" name="pass1" class="form-control" placeholder="Password"/>
                   </div>
                   <div class="form-group">
-                    <button
-                      type="submit"
-                      name="submit_action"
-                      value="signin"
-                      class="btn btn-secondary py-3 px-4"
-                    >
+                    <button type="submit" name="submit_action" value="signin" class="btn btn-secondary py-3 px-4">
                       Sign In
                     </button>
                   </div>
@@ -622,13 +506,8 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="project">
-              <div
-                class="img rounded mb-4"
-                style="
-                  background-image: url('{% static 'images/project-3.jpg' %}');
-                "
-              ></div>
+      <div class="project">
+  <div class="img rounded mb-4" style="background-image: url('{% static 'images/project-3.jpg' %}');" ></div>
               <div class="text w-100 text-center">
                 <span class="cat">Java</span>
                 <h3>
