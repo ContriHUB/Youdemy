@@ -1,8 +1,12 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import get_user_model
+from main.models import CustomUser
+# User = get_user_model()
+# from django.contrib.auth.models import User
+
 def home(request):
     user_first_name = request.session.get('user_first_name', 'Guest')
     return render(request, "main/index.html", {"fname": user_first_name})
@@ -53,10 +57,10 @@ def signup(request):
         email = request.POST['email']
         password1= request.POST['pass1']
         password2= request.POST['pass2']
-
+        role = request.POST.get('role', 'student') 
         if password1 == password2:
             # Create a new user
-            user = User.objects.create_user( username=username,email=email,password=password1)
+            user = CustomUser.objects.create_user( username=username,email=email,password=password1, role=role)
             user.first_name = fname
             user.last_name = lname
             user.save()
@@ -67,15 +71,17 @@ def signup(request):
     
 def signin(request):
     if request.method == 'POST':
-        username = request.POST['uname']
+        email = request.POST['email']
         password = request.POST['pass1']
-        user = authenticate(request, username=username, password=password)
+        # user = authenticate(request, username=username, password=password)
+        user = authenticate(request,email=email, password=password)
 
         if user is not None:
             login(request, user)
             messages.success(request, "Signed in successfully")
             request.session['user_first_name'] = user.username
             # print(f"User's first name: {user.username}")
+            # print(f"User's role: {user.role}")
             return redirect('home') 
         else:
             messages.error(request, "Invalid Credentials")
