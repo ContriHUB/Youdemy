@@ -287,7 +287,13 @@ def signin(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['pass1']
-        user = authenticate(request,email=email, password=password)
+        options = request.POST['options']
+
+        print(options)
+        if options == 'username':
+            user = authenticate(request,first_name=email, password=password)
+        else:
+            user = authenticate(request,email=email, password=password)
 
         if user is not None:
             login(request, user)
