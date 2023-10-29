@@ -288,10 +288,8 @@ def signin(request):
         email = request.POST['email']
         password = request.POST['pass1']
         options = request.POST['options']
-        print(options)
-        print(email)
-        if options == 'firstname':
-            user = authenticate(request,username=email, password=password)
+        if options == 'username':
+            user = authenticate(request,uname=email, password=password)
         else:
             user = authenticate(request,email=email, password=password)
 
