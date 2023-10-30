@@ -8,21 +8,21 @@ class UserManager(BaseUserManager):
 
     use_in_migrations = True
 
-    def _create_user(self, email,username, password, **extra_fields):
+    def _create_user(self, email, password, **extra_fields):
         """Create and save a User with the given email and password."""
         if not email:
             raise ValueError('The given email must be set')
         email = self.normalize_email(email)
-        user = self.model(username = username,email=email, **extra_fields)
+        user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_user(self, email,username, password=None, **extra_fields):
+    def create_user(self, email, password=None, **extra_fields):
         """Create and save a regular User with the given email and password."""
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
-        return self._create_user(email,username, password, **extra_fields)
+        return self._create_user(email, password, **extra_fields)
 
     def create_superuser(self, email, password, **extra_fields):
         """Create and save a SuperUser with the given email and password."""
@@ -39,11 +39,11 @@ class UserManager(BaseUserManager):
 class User(AbstractUser):
     """User model."""
     ROLE=(('Student','STUDENT'),('Mentor','MENTOR'))
-    username = models.CharField(max_length=20,unique=True)
+    username = None
     email = models.EmailField(_('email address'), unique=True)
     role=models.CharField(choices=ROLE,max_length=10)
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = []
 
     objects = UserManager()
 

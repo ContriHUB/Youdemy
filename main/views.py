@@ -273,11 +273,10 @@ def signup(request):
         email = request.POST['email']
         password1= request.POST['pass1']
         password2= request.POST['pass2']
-        username= request.POST['uname']
         role = request.POST['role'] 
         if password1 == password2:
             # Create a new user
-            user = User.objects.create_user( email=email,username=username,first_name=fname,last_name=lname,password=password1,role=role)
+            user = User.objects.create_user( email=email,first_name=fname,last_name=lname,password=password1,role=role)
             user.save()
             messages.success(request, "User registered successfully")
             return redirect('signin')
