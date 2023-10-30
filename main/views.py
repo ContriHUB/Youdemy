@@ -282,14 +282,16 @@ def signup(request):
             return redirect('signin')
         else:
             messages.error(request, "Passwords do not match")
+    return render(request, 'main/index.html')
 
 def signin(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['pass1']
         options = request.POST['options']
+
         if options == 'username':
-            user = authenticate(request,uname=email, password=password)
+            user = authenticate(request,first_name=email, password=password)
         else:
             user = authenticate(request,email=email, password=password)
 
