@@ -7,13 +7,13 @@ class NameAuthBackend:
     Allows users to log in using their first name.
     """
 
-    def authenticate(self, request, email=None, first_name=None, password=None):
+    def authenticate(self, request, email=None, name=None, password=None):
         """
         Overrides the authenticate method
         """
         try:
             if email == None:
-                user = User.objects.get(first_name=first_name)
+                user = User.objects.get(name=name)
             else:
                 user = User.objects.get(email=email)
             if user.check_password(password):

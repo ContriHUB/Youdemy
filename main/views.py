@@ -268,6 +268,7 @@ def contact(request):
 
 def signup(request):
     if request.method == 'POST':
+        uname = request.POST['uname']
         fname = request.POST['fname']
         lname = request.POST['lname']
         email = request.POST['email']
@@ -276,7 +277,7 @@ def signup(request):
         role = request.POST['role'] 
         if password1 == password2:
             # Create a new user
-            user = User.objects.create_user( email=email,first_name=fname,last_name=lname,password=password1,role=role)
+            user = User.objects.create_user(name=uname,email=email,first_name=fname,last_name=lname,password=password1,role=role)
             user.save()
             messages.success(request, "User registered successfully")
             return redirect('signin')
@@ -291,7 +292,7 @@ def signin(request):
         options = request.POST['options']
 
         if options == 'username':
-            user = authenticate(request,first_name=email, password=password)
+            user = authenticate(request,name=email, password=password)
         else:
             user = authenticate(request,email=email, password=password)
 
