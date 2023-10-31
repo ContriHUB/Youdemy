@@ -347,6 +347,7 @@ def contact(request):
 
 def signup(request):
     if request.method == 'POST':
+        uname = request.POST['uname']
         fname = request.POST['fname']
         lname = request.POST['lname']
         email = request.POST['email']
@@ -355,7 +356,7 @@ def signup(request):
         role = request.POST['role'] 
         if password1 == password2:
             # Create a new user
-            user = User.objects.create_user( email=email,first_name=fname,last_name=lname,password=password1,role=role)
+            user = User.objects.create_user(name=uname,email=email,first_name=fname,last_name=lname,password=password1,role=role)
             userp=UserProfile.objects.create(user=user)
             userp.save()
             user.save()
@@ -363,12 +364,18 @@ def signup(request):
             return redirect('signin')
         else:
             messages.error(request, "Passwords do not match")
+    return render(request, 'main/index.html')
 
 def signin(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['pass1']
-        user = authenticate(request,email=email, password=password)
+        options = request.POST['options']
+
+        if options == 'username':
+            user = authenticate(request,name=email, password=password)
+        else:
+            user = authenticate(request,email=email, password=password)
 
         if user is not None:
             login(request, user)
