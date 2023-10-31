@@ -134,3 +134,4 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend', # This is the default that allows us to log in via username
     'main.authentication.NameAuthBackend'
 ]
+TIME_ZONE = 'Asia/Kolkata'

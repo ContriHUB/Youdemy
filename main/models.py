@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from django.utils import timezone
 
 class UserManager(BaseUserManager):
     """Define a model manager for User model with no username field."""
